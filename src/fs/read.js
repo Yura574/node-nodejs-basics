@@ -9,11 +9,10 @@ const read = async () => {
 
     fs.access(path.join(pathName, 'fileToRead.txt'), fs.constants.F_OK)
         .then(async () => {
-                console.log(await fs.readFile(path.join(pathName, 'fileToRead.txt2'), {encoding: 'utf-8'}))
+                console.log(await fs.readFile(path.join(pathName, 'fileToRead.txt'), {encoding: 'utf-8'}))
             }
         )
         .catch(() => {
-            // console.log('file doesn`t exist')
             throw new Error('FS operation failed')
         })
 
